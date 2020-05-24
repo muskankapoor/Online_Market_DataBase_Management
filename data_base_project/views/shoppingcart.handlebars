@@ -1,0 +1,58 @@
+
+My Shopping cart
+
+
+
+<table border="1">    
+		<thead>            
+			<tr>           
+				<th>Item</th>
+				<th>Unit Price</th>
+				<th>Quantity</th>
+				<th>Sum</th>
+				<th></th>
+			</tr>
+		</thead>
+	<tbody>	
+		{{#each arr}}
+			<tr>			
+				<td>{{item_name}}</td>			 
+				<td>{{unit_price}}</td>
+				<td>  
+					<form action='/update/{{item_name}}' method='POST'>
+						<input type="number" name="updateNumber" step="1" value={{quantity}}>	
+						<button>Update</button>
+					</form>
+				</td> 		 
+				<td>{{current_price}}</td> 
+				<td>
+					<form action='/delete/{{item_name}}' method='POST'>
+						<button>Delete</button>
+					</form>
+				</td> 
+			</tr>
+		{{/each}}	
+			<tr>			
+				<td></td>			 
+				<td></td>
+				<td></td>			 
+				<td>Tax: {{total_tax}}</td>
+			</tr>
+
+			<tr>			
+				<td></td>			 
+				<td></td>
+				<td></td>			 
+				<td>Total: {{total}}</td>
+			</tr>			
+	</tbody>
+</table>
+
+<br>
+<form action='/listAllItems' method='GET'>
+	<button>Shop more</button>
+</form>
+<br>
+<form action='/finish' method='GET'>
+	<button>Payment</button>
+</form>

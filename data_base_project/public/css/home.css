@@ -1,0 +1,57 @@
+body{
+	text-align: center;
+
+}
+img{
+	 border-radius: 50%;	  /*border will now be circle*/
+	
+}
+
+body{
+	/*background-image: url(https://s3.envato.com/files/33593446/zak_35_590.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;*/
+
+	background-color: lightblue;
+}
+
+
+.container{
+	max-width: 950px;  /*set the width for both div class*/
+
+	margin-left: auto;  /*to center the content (horizontally) for both classes*/
+    margin-right: auto;
+}
+
+.col-sm-3 > h3{         /*for all h3 in .col-sm-3 or .col-sm-4*/
+	font-size:20px;
+}
+
+.col-sm-3 > p{
+	font-size:5px;
+}
+
+.new{
+	display:inline;
+}
+
+.col-sm-3 h4{
+	font-size:20px;
+	color:white;
+	background-color: red;
+
+	margin-left: auto;  /*to center the content in h4*/
+    margin-right: auto;
+    width:50px;
+
+}
+
+.col-sm-3 > p{
+	font-size:20px;
+}
+
+.buttonD{
+	position: absolute;
+	right:0;
+}
+

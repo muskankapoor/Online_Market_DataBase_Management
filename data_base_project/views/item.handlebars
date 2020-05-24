@@ -1,0 +1,32 @@
+
+<form action='/shoppingcart/1' method='GET' class="buttonD">
+	<button>My Shopping Cart </button>
+</form>
+<div>
+	<h1>{{element.item_name}}</h1>	
+
+
+	<img src={{element.img_url}} class="bootstrapImag" width=200  height=170 alt="Food image">
+
+	{{# if unit_in_lb}}
+		<h6>Remaining Quantity: {{remain}} lbs</h6>
+	{{else}}
+		<h6>Remaining Quantity: {{remain}}</h6>
+	{{/if}}
+	
+	<h6>Price: {{element.unit_price}}/{{element.price_unit}}</h6>
+
+	{{# if unit_in_lb}}
+		<form action='/add/{{element.barcode_id}}' method='POST' class="buttonD">
+			<input type="number" id="add" name="add" step="1" min=0 max={{remain}}> lbs
+			<button>Add</button>
+		</form>
+	{{else}}
+		<form action='/add/{{element.barcode_id}}' method='POST' class="buttonD">
+			<input type="number" id="add" name="add" step="1" min=0 max={{remain}}>
+			<button>Add</button>
+		</form>
+	{{/if}}
+	
+
+</div>

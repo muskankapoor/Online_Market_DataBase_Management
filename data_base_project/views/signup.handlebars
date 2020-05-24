@@ -1,0 +1,25 @@
+
+<link rel="stylesheet" href="./css/signup.css">
+
+<h1>Create new User</h1>
+<form action ="/newAccount" method="POST" >
+
+	<div class=box>
+		<label>Username:</label><br> 
+		<input type="text" name="username" maxlength= "20" required> <br><br>
+		<label>Email:</label><br> 
+		<input type="email" name="email" maxlength= "50" required>  <br> <br>
+		<label>Password:</label><br> 
+		<input type="password" name="password"  minlength="8" maxlength= "20" required> <br> <br>
+		<label>Confirm Password:</label><br> 
+		<input type="password" name="confirmPassword" minlength="8" maxlength= "20"> <br> <br>
+		<label>Address:</label><br> 
+		<input type="text" name="address" maxlength= "50" required> <br><br>
+		<label>Phone:</label><br> 
+		<input type="text" name="phone" maxlength= "15" required> <br><br>
+
+		<button>Sumbit</button>
+	</div>
+</form>
+<br>
+<a href="/">Go to Log in Page</a>
