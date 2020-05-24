@@ -1,0 +1,160 @@
+load data informaition is in queries.txt file
+
+
+
++------------------+
+| Tables_in_mydb   |
++------------------+
+| address          |
+| admin            |
+| company          |
+| customers        |
+| item_company_key |
+| items            |
+| paidItems        |
+| product          |
+| purchase         |
+| purchase_history |
+| shoppingcart     |
+| transaction      |
++------------------+
+12 rows in set (0.04 sec)
+
+mysql> desc address;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| cid            | int(11)     | NO   | PRI | NULL    | auto_increment |
+| street_address | varchar(50) | YES  |     | NULL    |                |
+| state          | varchar(30) | YES  |     | NULL    |                |
+| zipcode        | varchar(10) | YES  |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.03 sec)
+
+mysql> desc admin;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| first_name | varchar(15) | YES  |     | NULL    |       |
+| last_name  | varchar(15) | YES  |     | NULL    |       |
+| username   | varchar(20) | YES  |     | NULL    |       |
+| password   | varchar(12) | YES  |     | NULL    |       |
+| email      | varchar(45) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql> desc company;
++--------------------+-------------+------+-----+---------+----------------+
+| Field              | Type        | Null | Key | Default | Extra          |
++--------------------+-------------+------+-----+---------+----------------+
+| company_id         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| item_company_name  | varchar(20) | YES  |     | NULL    |                |
+| item_company_phone | varchar(20) | YES  |     | NULL    |                |
++--------------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.03 sec)
+
+mysql> desc customers;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| cid      | int(11)     | NO   | PRI | NULL    | auto_increment |
+| username | varchar(20) | YES  |     | NULL    |                |
+| email    | varchar(50) | YES  |     | NULL    |                |
+| passowrd | varchar(20) | YES  |     | NULL    |                |
+| phone    | varchar(15) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+5 rows in set (0.02 sec)
+
+mysql> desc item_company_key;
++------------+---------+------+-----+---------+-------+
+| Field      | Type    | Null | Key | Default | Extra |
++------------+---------+------+-----+---------+-------+
+| barcode_id | int(11) | YES  |     | NULL    |       |
+| company_id | int(11) | YES  |     | NULL    |       |
++------------+---------+------+-----+---------+-------+
+2 rows in set (0.04 sec)
+
+mysql> desc items
+    -> ;
++--------------------+--------------+------+-----+---------+----------------+
+| Field              | Type         | Null | Key | Default | Extra          |
++--------------------+--------------+------+-----+---------+----------------+
+| barcode_id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| item_name          | varchar(20)  | YES  |     | NULL    |                |
+| img_url            | varchar(200) | YES  |     | NULL    |                |
+| department         | varchar(20)  | YES  |     | NULL    |                |
+| taxable            | varchar(5)   | YES  |     | NULL    |                |
+| unit_price         | double       | YES  |     | NULL    |                |
+| price_unit         | varchar(5)   | YES  |     | NULL    |                |
+| case_price         | double       | YES  |     | NULL    |                |
+| num_lb_in_case     | double       | YES  |     | NULL    |                |
+| cases_in_stock     | int(11)      | YES  |     | NULL    |                |
+| remain_not_in_case | double       | YES  |     | NULL    |                |
++--------------------+--------------+------+-----+---------+----------------+
+11 rows in set (0.02 sec)
+
+mysql> desc paidItems;
++------------+-----------+------+-----+-------------------+-------+
+| Field      | Type      | Null | Key | Default           | Extra |
++------------+-----------+------+-----+-------------------+-------+
+| cid        | int(11)   | YES  |     | NULL              |       |
+| item       | int(11)   | YES  |     | NULL              |       |
+| quantity   | double    | YES  |     | NULL              |       |
+| unit_price | double    | YES  |     | NULL              |       |
+| paid_time  | timestamp | YES  |     | CURRENT_TIMESTAMP |       |
++------------+-----------+------+-----+-------------------+-------+
+5 rows in set (0.04 sec)
+
+mysql> desc product
+    -> ;
++--------------------+-------------+------+-----+---------+-------+
+| Field              | Type        | Null | Key | Default | Extra |
++--------------------+-------------+------+-----+---------+-------+
+| item_name          | varchar(64) | YES  |     | NULL    |       |
+| barcode            | float       | YES  |     | NULL    |       |
+| item_department    | varchar(64) | YES  |     | NULL    |       |
+| price              | float       | YES  |     | NULL    |       |
+| price_unit         | varchar(64) | YES  |     | NULL    |       |
+| taxable            | varchar(5)  | YES  |     | NULL    |       |
+| case_number        | int(11)     | YES  |     | NULL    |       |
+| case_weight_pounds | int(11)     | YES  |     | NULL    |       |
++--------------------+-------------+------+--ysql> desc purchase;
++-------------+---------+------+-----+---------+----------------+
+| Field       | Type    | Null | Key | Default | Extra          |
++-------------+---------+------+-----+---------+----------------+
+| purchase_id | int(11) | NO   | PRI | NULL    | auto_increment |
+| barcode_id  | int(11) | YES  |     | NULL    |                |
+| quantity    | double  | YES  |     | NULL    |                |
++-------------+---------+------+-----+---------+----------------+
+3 rows in set (0.11 sec)
+
+mysql> desc purchase_history;
++-------------+---------+------+-----+---------+----------------+
+| Field       | Type    | Null | Key | Default | Extra          |
++-------------+---------+------+-----+---------+----------------+
+| purchase_id | int(11) | NO   | PRI | NULL    | auto_increment |
+| cid         | int(11) | YES  |     | NULL    |                |
++-------------+---------+------+-----+---------+----------------+
+2 rows in set (0.02 sec)
+
+mysql> desc shopping_cart;
+ERROR 1146 (42S02): Table 'mydb.shopping_cart' doesn't exist
+mysql> desc shoppingcart;
++------------+---------+------+-----+---------+-------+
+| Field      | Type    | Null | Key | Default | Extra |
++------------+---------+------+-----+---------+-------+
+| cid        | int(11) | YES  |     | NULL    |       |
+| barcode_id | int(11) | YES  |     | NULL    |       |
+| quantity   | double  | YES  |     | NULL    |       |
++------------+---------+------+-----+---------+-------+
+3 rows in set (0.04 sec)
+
+mysql> desc transaction;
++--------------+-----------+------+-----+-------------------+----------------+
+| Field        | Type      | Null | Key | Default           | Extra          |
++--------------+-----------+------+-----+-------------------+----------------+
+| purchase_id  | int(11)   | NO   | PRI | NULL              | auto_increment |
+| payment_date | timestamp | YES  |     | CURRENT_TIMESTAMP |                |
+| total_price  | double    | YES  |     | NULL              |                |
++--------------+-----------+------+-----+-------------------+----------------+
+3 rows in set (0.04 sec)

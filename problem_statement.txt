@@ -1,0 +1,29 @@
+Problem: How and what can we do to gain more profit in an online market? We were very interested in this issue since the online market is a very relevant and popular medium these days.  In order to solve any such problem, it is important to analyze and collect data.
+In this web application we have created, buyers are able to buy things by adding items in their shopping cart. Once they pay their items the system will be able to decrease the number of items in the market. Sellers will be able to add more items and the product details and the system will autumnally update the information. The data that we am collecting here is in regards to the items. Different items will have different prices and a specially generated code (or barcode) will help differentiate all these items.  Use Graphs to show when is profitable to import more items in stock
+The data that we am collecting here is in regards to the items, for example, the number of items that are being sold. This will help us differentiate which items are popular and less popular, over a certain period of time. This will help us eradicate items that are not popular and focus on the sellers that are providing more profit.
+Sample data collected: name of the item, Unique barcode, # brought, # sold Company name, taxable, and more data
+barcode_id                          (ex: barcode id for apple is 1)
+item_name                           (ex: apple)
+img_url                     (ex: using url to get an image of an apple)
+department                          (ex:  apple is in Fruit Departement)
+taxable                                 (ex: apple is not taxable)
+price                                   (ex: how much is an apple: $0.6/each)
+case_price                              (ex:  a case of apple is 20 dollars)
+num_lb_in_case          (ex: how many pounds of radish in a case)
+cases_in_stock          (ex: how many cases of apples left in stock)
+remain_not_in_case              (ex: how many singles in stock, not including the cases)
+company_info                        (ex: information about apple's importation)
+username                           (ex: Ju)
+Customer_id                       (customer id for Ju is 1)
+customer_email                  (ex: yei@gmail.com)
+password                            (ex: password for login)
+phone                                 (customer's phone number)
+address                              (where customer live )
+Purchase_id                       (ex: purchase number)
+quantity                              (ex: I bought 5 apples )
+payment_date                    (ex: I purchased 5 apples on 5/11/2020 at 12:12:12 )
+total price                           (ex: total price for 5 apples)
+
+
+
+above is the initial attributes and data. for information in the normaliation porcess plz check the normalization.xlsx file
